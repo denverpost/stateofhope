@@ -1,0 +1,37 @@
+
+<html>
+<head>
+    <script type="text/javascript" src="//www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+    googletag.pubads().setTargeting('page',['article']);
+    </script>
+    <style type="text/css">body { margin:0; padding:0; }</style>
+</head>
+<body>
+    <div id="dfp-20">
+        <script>
+
+var properties = {
+    'denverpost': '/8013/denverpost.com'
+};
+var property = 'denverpost';
+
+var params = location.search;
+
+// We've got a few ad sizes we may want.
+var adsize = [300,50];
+if ( params.indexOf('ad=medium') > -1 ) adsize = [728,90];
+
+            var DFM_ad_loc = properties[property];
+            var agSection = 'news';
+            googletag.cmd.push(function(){
+                               googletag.defineSlot(DFM_ad_loc, [adsize], 'dfp-20').setTargeting('kv', 'news').addService(googletag.pubads());
+                               googletag.pubads().enableSyncRendering();
+                               //googletag.pubads().disableInitialLoad();
+                               googletag.enableServices();
+                               googletag.display('dfp-20');
+            });
+        </script>
+    </div>
+</body>
+</html>
