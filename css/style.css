@@ -223,6 +223,11 @@ section.inset .inset-video-left {
     font-weight:400;
     font-size:1em;
 }
+.top-bar-section li.noclick,
+.top-bar-section li.noclick a {
+    cursor:default;
+    pointer-events:none;
+}
 .fixed.expanded {
     -webkit-box-shadow:0px 4px 5px rgba(0, 0, 0, 0.25);
     -moz-box-shadow:0px 4px 5px rgba(0, 0, 0, 0.25);
@@ -645,7 +650,7 @@ a:hover, * a:hover, a:hover * {
     font-size:2em;
     margin:0 1em;
     display:block;
-    color:rgba(255,255,255,0.9);
+    color:rgba(153,153,153,0.8);
     text-shadow:0px 0px 2px rgba(80,80,80,.5);
     transform:scale(1,8);
     -webkit-transform:scale(1,8);
@@ -663,7 +668,7 @@ a:hover, * a:hover, a:hover * {
     height:100%;
     width:15%;
     text-align:left;
-    background:rgba(255,255,255,.7);
+    background:rgba(255,255,255,1.0);
     outline:none;
 }
 .centergallery button.slick-prev {
@@ -673,7 +678,7 @@ a:hover, * a:hover, a:hover * {
     height:100%;
     width:15%;
     text-align:right;
-    background:rgba(255,255,255,.7);
+    background:rgba(255,255,255,1.0);
     outline:none;
 }
 #slidesoffset .lowertitle h1 {
@@ -685,7 +690,7 @@ a:hover, * a:hover, a:hover * {
 }
 #slidesoffset .centergallery button.slick-next,
 #slidesoffset .centergallery button.slick-prev {
-    background:rgba(34,34,34,.9);
+    background:rgba(34,34,34,1.0);
 }
 #slidesoffset .centergallery button span {
     color:rgba(205,205,205,0.8);

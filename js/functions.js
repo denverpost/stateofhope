@@ -60,139 +60,6 @@ function darkBackground(element, reverse) {
     }
 }
 
-function createChartOne() {
-    var pieData = [{
-        value: 68,
-        color: "rgba(0,70,70,0.75)",
-        label: "Medicaid (state and federal)"
-    }, {
-        value: 27,
-        color: "rgba(0,23,70,0.75)",
-        label: "State general funds"
-    }, {
-        value: 2,
-        color: "rgba(23,0,70,0.75)",
-        label: "Medicare"
-    }, {
-        value: 1,
-        color: "rgba(70,0,70,0.75)",
-        label: "Mental health block grant"
-    }, {
-        value: 2,
-        color: "rgba(70,0,47,0.75)",
-        label: "Other"
-    }];
-    var helpers = Chart.helpers;
-    var funding = new Chart(document.getElementById("funding").getContext("2d")).Doughnut(pieData, {
-        tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>%",
-        animateRotate: true
-    });
-    var legendHolder = document.createElement('div');
-    legendHolder.innerHTML = funding.generateLegend();
-
-    // Include a html legend template after the module doughnut itself
-    helpers.each(legendHolder.firstChild.childNodes, function (legendNode, index) {
-        helpers.addEvent(legendNode, 'mouseover', function () {
-            var activeSegment = funding.segments[index];
-            activeSegment.save();
-            funding.showTooltip([activeSegment]);
-            activeSegment.restore();
-        });
-    });
-    helpers.addEvent(legendHolder.firstChild, 'mouseout', function () {
-        funding.draw();
-    });
-
-    funding.chart.canvas.parentNode.parentNode.appendChild(legendHolder.firstChild);
-}
-
-function createChartTwo() {
-    var pieData = [{
-        value: 77,
-        color: "rgba(0,70,70,0.75)",
-        label: "Community programs"
-    }, {
-        value: 22,
-        color: "rgba(0,23,70,0.75)",
-        label: "State hospitals"
-    }, {
-        value: 1,
-        color: "rgba(23,0,70,0.75)",
-        label: "Other"
-    }];
-    var helpers = Chart.helpers;
-    var spending = new Chart(document.getElementById("spending").getContext("2d")).Doughnut(pieData, {
-        tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %>%",
-        animateRotate: true
-    });
-    var legendHolder = document.createElement('div');
-    legendHolder.innerHTML = spending.generateLegend();
-
-    // Include a html legend template after the module doughnut itself
-    helpers.each(legendHolder.firstChild.childNodes, function (legendNode, index) {
-        helpers.addEvent(legendNode, 'mouseover', function () {
-            var activeSegment = spending.segments[index];
-            activeSegment.save();
-            spending.showTooltip([activeSegment]);
-            activeSegment.restore();
-        });
-    });
-    helpers.addEvent(legendHolder.firstChild, 'mouseout', function () {
-        spending.draw();
-    });
-
-spending.chart.canvas.parentNode.parentNode.appendChild(legendHolder.firstChild);
-}
-
-function createChartThree() {
-    var barChartData = {
-        labels : ["2007","2008","2009","2010","2011","2012"],
-        datasets : [
-            {
-                fillColor : "rgba(0,70,70,0.65)",
-                strokeColor : "rgba(0,70,70,0.8)",
-                highlightFill: "rgba(0,70,70,0.75)",
-                highlightStroke: "rgba(0,70,70,1)",
-                data : [71748,82237,80141,83767,87977,94033]
-            },
-            {
-                fillColor : "rgba(70,0,0,0.65)",
-                strokeColor : "rgba(70,0,0,0.8)",
-                highlightFill: "rgba(70,0,0,0.75)",
-                highlightStroke: "rgba(70,0,0,1)",
-                data : [3401,3880,2608,2040,1635,1956]
-            }
-        ]
-    }
-    var ctx = document.getElementById("patients").getContext("2d");
-    window.myBar = new Chart(ctx).Bar(barChartData, {
-        responsive : true,
-    });
-}
-
-function createChartFour() {
-    var lineChartData = {
-        labels : ["2005","2006","2007","2008","2009","2010*","2011","2012","2013","2014"],
-        datasets : [
-            {
-                label: "Homeless mental illness",
-                fillColor : "rgba(0,70,70,0.2)",
-                strokeColor : "rgba(0,70,70,1)",
-                pointColor : "rgba(0,70,70,1)",
-                pointStrokeColor : "#fff",
-                pointHighlightFill : "#fff",
-                pointHighlightStroke : "rgba(220,220,220,1)",
-                data : [15.4,18.7,21.1,24.2,28.0,23.7,19.4,20.8,23.1,34.4]
-            }
-        ]
-    }
-    var ctx = document.getElementById("homelessline").getContext("2d");
-    window.myLine = new Chart(ctx).Line(lineChartData, {
-        responsive: true,
-        bezierCurve: false
-    });
-}
-
 var gridOpen = false;
 
 function swapGridBox(box) {
@@ -329,18 +196,17 @@ function showAd() {
 
 function getAdTimes() {
     var docHeight = $(document).height();
-    var chunkHeight = docHeight / 6;
-    var innerHeight = (window.innerHeight * 3);
+    var chunkHeight = docHeight / 3;
+    var innerHeight = (window.innerHeight * 2);
     var adReturns = [Math.round(innerHeight), Math.round(innerHeight + chunkHeight), Math.round(innerHeight + chunkHeight * 2), Math.round(innerHeight + chunkHeight * 3),  Math.round(innerHeight + chunkHeight * 4)];
     return adReturns;
 
 }
 
 var adTimes = getAdTimes();
-console.log(adTimes);
 
-$(document).ready(function() {
-    $('.centergallery').slick({
+$('#timothyphotos').find('img').unveil(300, function() {
+    $('#timothyphotos.centergallery').slick({
         centerMode: true,
         centerPadding: '15%',
         slidesToShow: 1,
@@ -356,6 +222,27 @@ $(document).ready(function() {
             }
         }]
     });
+});
+$('#onthestreet').find('img').unveil(300, function() {
+    $('#onthestreet.centergallery').slick({
+        centerMode: true,
+        centerPadding: '15%',
+        slidesToShow: 1,
+        prevArrow: '<button type="button" class="slick-prev"><span>&lt;</span></button>',
+        nextArrow: '<button type="button" class="slick-next"><span>&gt;</span></button>',
+        responsive: [{
+            breakpoint: 800,
+            settings: {
+                arrows: true,
+                centerMode: true,
+                centerPadding: '8%',
+                slidesToShow: 1
+            }
+        }]
+    });
+});
+
+$(document).ready(function() {
     if ( $(window).scrollTop() > (window.innerHeight / 2) ) {
         if (titleFade) {
             fadeNavBar(false);
@@ -385,12 +272,6 @@ $(document).ready(function() {
             scrollDownTo(window.location.hash, 60);
         },1000);
     }
-    setTimeout(function() {
-        createChartOne();
-        createChartTwo();
-        createChartThree();
-        createChartFour();
-    },3000);
 });
 
 $(window).scroll(function() {
@@ -429,38 +310,4 @@ $(window).scroll(function() {
         darkBackground('#slidesoffset',true);
         slideBack = true;
     }
-});
-
-$('#panel1').on('toggled', function (event, tab) {
-    $('.tabs-content .active table').trigger('footable_resize');
-});
-$('#panel2').on('toggled', function (event, tab) {
-    $('.tabs-content .active table').trigger('footable_resize');
-});
-$('#panel3').on('toggled', function (event, tab) {
-    $('.tabs-content .active table').trigger('footable_resize');
-});
-$(function () {
-    $('#panel1 table').footable({
-        breakpoints: {
-            phone: 540,
-        }
-    });
-    $('#panel2 table').footable({
-        breakpoints: {
-            phone: 540,
-        }
-    });
-    $('#panel3 table').footable({
-        breakpoints: {
-            phone: 540,
-        }
-    });
-    $('.tabs-content .active table').trigger('footable_resize');
-    $('.sort-column').click(function (e) {
-        e.preventDefault();
-        var footableSort = $('table').data('footable-sort');
-        var index = $(this).data('index');
-        footableSort.doSort(index, 'toggle');
-    });
 });
