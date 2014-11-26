@@ -3,6 +3,25 @@ $(document).foundation('reveal', {
     animationspeed: 200
 });
 
+var pathRoot = window.location.protocol + '//' + window.location.hostname + window.location.pathname;
+var titleRoot = document.title;
+console.log(pathRoot);
+
+function load_omniture() {
+        var omni = $('#omniture').html();
+        $('#omniture').after('<div id="new_omni">' + omni + '</div>');
+}
+function build_url(path) {
+        var url = pathRoot + path;
+        return url;
+}
+function rewrite_url(path, new_title) {
+        var url = build_url(path);
+        document.title = new_title + ' - ' + titleRoot;
+        window.history.replaceState('', new_title, url);
+        load_omniture();
+}
+
 function revealCredits() {
     $('#credits').foundation('reveal', 'open');
 }
@@ -60,51 +79,6 @@ function darkBackground(element, reverse) {
     }
 }
 
-var gridOpen = false;
-
-function swapGridBox(box) {
-    if ( !$(box).hasClass('expanded') ) {
-        $(box).parent('li').siblings().css('display','none');
-        $(box).parents('ul').removeClass('small-block-grid-3');
-        $(box).find('p.gridcaption').css('display','none');
-        $(box).find('.gridphotograd').css('display','block');
-        $(box).addClass('expanded');
-        scrollDownTo('#profiles');
-        document.body.style.overflow='hidden';
-        playerClear = false;
-        gridOpen = true;
-    } else if (!playerClear) {
-        $(box).parent('li').siblings().css('display','block');
-        $(box).parents('ul').addClass('small-block-grid-3');
-        $(box).find('p.gridcaption').css('display','block');
-        $(box).find('.gridphotograd').css('display','none');
-        $(box).removeClass('expanded');
-        document.body.style.overflow='auto';
-        playerClear = false;
-        gridOpen = false;
-    }
-}
-
-$('.gridbox').on("click", function() {
-    swapGridBox(this);
-});
-
-$(document).mouseup(function (e)
-{
-    if (gridOpen) {
-        var container = $('.gridbox.expanded');
-        var adWrap = $('#adwrapper');
-        if (!adWrap.is(e.target) && adWrap.has(e.target).length === 0 && !container.is(e.target) && container.has(e.target).length === 0)
-        {
-            swapGridBox(container);
-        }
-    }
-});
-
-$('.gridprofile').scroll(function(){
-    $(this).siblings('.gridphotograd').animate({opacity:'0'},700);
-});
-
 $('#maintitle').on("click", function() {
     scrollDownTo('#overviewvid',0);
 });
@@ -158,13 +132,7 @@ function hideAdManual() {
 }
 
 $(document).keyup(function(e) {
-    if ( $('.gridbox.expanded').length ) {
-        $('.gridbox').each(function() {
-            if ( $(this).hasClass('expanded') ) {
-                swapGridBox(this);
-            }
-        });    
-    } else if (!moreAd && e.keyCode == 27) {
+    if (!moreAd && e.keyCode == 27) {
         hideAdManual();
     }    
 });
@@ -185,7 +153,7 @@ function getAdSize() {
 function showAd() {
     var adSize = getAdSize();
     if (moreAd && adSize) {
-        $('#adframewrapper').html('<iframe src="http://extras.denverpost.com/mentalillness/ad.html?' + adSize[0] + '"seamless height="' + adSize[2] + '" width="' + adSize[1] + '" frameborder="0"></iframe>');
+        $('#adframewrapper').html('<iframe src="' + pathRoot + 'ad.html?' + adSize[0] + '"seamless height="' + adSize[2] + '" width="' + adSize[1] + '" frameborder="0"></iframe>');
         $('#adwrapper').fadeIn(400);
         $('a.boxclose').fadeIn(400);
         var adH = $('#adwrapper').height();
@@ -267,11 +235,6 @@ $(document).ready(function() {
         $('#scroll-down').delay(1400).animate({opacity:'1'},1400);
         scrollvis = true;
     }
-    if (window.location.hash.length) {
-        setTimeout(function() {
-            scrollDownTo(window.location.hash, 60);
-        },1000);
-    }
 });
 
 $(window).scroll(function() {
@@ -295,6 +258,13 @@ $(window).scroll(function() {
         }
     } else if (!titleFade) {
         fadeNavBar(true);
+    }
+    if (isVisible('#homeless')) {
+        var triggerDiv = $('#homeless');
+        if ($(triggerDiv).data('omniTrigger')) {
+            rewrite_url($(triggerDiv).data('omniUrl'),$(triggerDiv).data('omniTitle'));
+            $(triggerDiv).data('omniTrigger', false);
+        }
     }
     if ( isVisible('#overviewvid') && vidBack ) {
         darkBackground('#overviewvid',false);
