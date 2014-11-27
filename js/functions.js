@@ -5,7 +5,6 @@ $(document).foundation('reveal', {
 
 var pathRoot = window.location.protocol + '//' + window.location.hostname + window.location.pathname;
 var titleRoot = document.title;
-console.log(pathRoot);
 
 function load_omniture() {
         var omni = $('#omniture').html();
@@ -144,7 +143,7 @@ function getAdSize() {
     } else {
         return false;
     }
-    /*else if ( $(window).width() >= 300 && $(window).width() < 740 ) {
+    /* else if ( $(window).width() >= 300 && $(window).width() < 740 ) {
         var adSizes = ['ad=small','300','50'];
         return adSizes;
     }*/
@@ -261,9 +260,9 @@ $(window).scroll(function() {
     }
     if (isVisible('#homeless')) {
         var triggerDiv = $('#homeless');
-        if ($(triggerDiv).data('omniTrigger')) {
+        if ($(triggerDiv).hasClass('omnitrig')) {
             rewrite_url($(triggerDiv).data('omniUrl'),$(triggerDiv).data('omniTitle'));
-            $(triggerDiv).data('omniTrigger', false);
+            $(triggerDiv).removeClass('omnitrig');
         }
     }
     if ( isVisible('#overviewvid') && vidBack ) {
