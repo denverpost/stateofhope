@@ -291,6 +291,23 @@ section.inset .inset-video-left {
     font-family:'PT Sans', Helvetica, Arial, sans-serif !important;
     color:#222;
 }
+.has-tip {
+    font-weight:normal;
+}
+.has-tip:hover {
+    color:#009696;
+}
+.has-tip:after {
+    content:'\003f';
+    font-size:.65em;
+    vertical-align:super;
+    border-bottom:none;
+    width:0;
+    overflow:visible;
+    padding-left:.1em;
+    font-weight:bold;
+    color:#009696;
+}
 div.title h2 {
     margin:25% 0 4%;
     text-align: center;
