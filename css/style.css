@@ -8,23 +8,6 @@ body {
     z-index:599999;
     top:-45px;
 }
-#scroll-down {
-    width: 0;
-    height: 0;
-    position:fixed;
-    left:50%;
-    bottom:1em;
-    margin-left:-8em;
-    opacity:0;
-    border-left: 8em solid transparent;
-    border-right: 8em solid transparent;
-    border-top-width: 2em;
-    border-top-color: rgba(153,0,0,0.25);
-    border-top-style: solid;
-    border-bottom-width: 0;
-    border-bottom-color: transparent;
-    border-bottom-style: solid;
-}
 .forhelp {
     border:1px solid #ddd;
     margin:3em 0 6em;
@@ -76,6 +59,47 @@ body {
     z-index:500000;
     text-decoration:none;
     cursor:pointer;
+}
+.opener {
+    background-position: 50% 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-attachment: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    z-index: -2;
+    margin-top:-45px;
+    margin-bottom:1em;
+}
+.opener {
+    background-image:url('http://extras.denverpost.com/homelessstudents/img/part1main.jpg');
+}
+.opener div#title {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align:center;
+}
+.opener div#title h2 {
+    text-transform: uppercase;
+    position: absolute;
+    bottom:0;
+    font-size:12.5em;
+    text-align:center;
+    width:100%;
+    line-height:.5;
+    color:#f9f9f9;
+    font-weight: bold;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
 }
 .gridbox .gridphoto a.boxclose {
     display:none;
@@ -136,9 +160,24 @@ div#name2 h1 {
     font-weight:300;
     color:#fff;
 }
+p.lead {
+    font-size:1.3em;
+    line-height:2;
+    font-weight:700;
+}
+p.blurb {
+    font-family:'PT Sans Condensed', Helvetica, Arial, sans-serif;
+    font-size:1.25em;
+    line-height:1.4;
+    color:#616161;
+    font-style: italic;
+    text-align: center;
+    margin:6em auto 10em;
+    font-weight:400;
+}
 p.byline {
     text-align:center;
-    font-size:.9em;
+    font-size:1em;
     margin-bottom:4em;
 }
 p.bylinebottom {
@@ -188,12 +227,6 @@ section.inset .twinphoto {
 }
 section.inset p.caption {
     font-size:1.05em;
-}
-section.inset p.lead:first-letter {
-    font-size:3.4em;
-    line-height:1;
-    margin-right:.25em;
-    margin-top:.1em;
 }
 section.inset .inset-video-right {
     float:right;
@@ -357,7 +390,7 @@ h1, h2, h3, h4 {
   	font-family:'PT Sans Narrow', Helvetica, Arial, sans-serif !important;
   	font-weight:700;
 }
-p, .reveal-modal li, p.lead {
+p, .reveal-modal li {
   	color:#333;
     font-size:1.15em;
     line-height:2;
@@ -443,18 +476,6 @@ h3.subheading {
     width:70%;
     border-bottom:1px solid rgba(0,0,0,.3);
 }
-p.lead:first-letter {
-    float:left;
-    font-size:6em;
-    font-weight:700;
-    line-height:.7;
-    color:#990000;
-    margin-right:.15em;
-    margin-bottom:.25em;
-}
-p.lead + p {
-    clear:left;
-}
 p.insetquote {
     font-style: italic;
     font-size:1.35em;
@@ -509,113 +530,6 @@ a:hover, * a:hover, a:hover * {
 }
 .twinphoto .photoright .caption {
     padding-right:1em;
-}
-.photogrid li {
-    margin-bottom:0;
-    list-style-type: none;
-    padding: 0 .25em .5em;
-}
-.gridbox, .gridcenter {
-    margin:.25em;
-    border:1px solid #ccc;
-    padding:.5em;
-    cursor:pointer;
-}
-.gridbox.expanded {
-    cursor:auto;
-}
-.gridbox.expanded .gridphoto {
-    pointer-events:auto;
-}
-.gridphoto {
-    position: relative;
-    width:100%;    
-    background-size:cover;
-    background-position: center center;
-    overflow:hidden;
-    pointer-events:none;
-}
-.gridphoto .gridprofile {
-    display: none;
-    overflow-x:hidden;
-    overflow-y:scroll;
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    font-size:.85em;
-}
-.gridphoto .gridprofile .row:last-child {
-    margin-bottom:4em;
-}
-.gridphoto .gridprofile h1 {
-    font-size:2em;
-    margin:15% 0 5%;
-}
-.gridphoto .gridprofile p.caption {
-    font-size:1em;
-}
-.gridprofile p.lead:first-letter {
-    font-size:1.8em;
-    line-height:1;
-    margin-right:.1em;
-    float:none;
-}
-.gridbox.expanded .gridphoto .gridprofile {
-    display:block;
-}
-.gridbox.expanded .gridphoto {
-    background-image:none!important;
-}
-.gridphotospace {
-    width:100%;
-    height:0;
-    padding-bottom:66%;
-    pointer-events:none;
-}
-.gridbox.expanded .gridphotospace {
-    padding-bottom:75%;
-}
-.gridphotograd {
-    height:25%;
-    width:100%;
-    left:0;
-    bottom:0;
-    position:absolute;
-    background: -webkit-linear-gradient(top, rgba(255,255,255,0.0), rgba(255,255,255,1.0));
-    background: -moz-linear-gradient(top, rgba(255,255,255,0.0), rgba(255,255,255,1.0));
-    background: -ms-linear-gradient(top, rgba(255,255,255,0.0), rgba(255,255,255,1.0));
-    background: -o-linear-gradient(top, rgba(255,255,255,0.0), rgba(255,255,255,1.0));
-    background: linear-gradient(to bottom, rgba(255,255,255,0.0), rgba(255,255,255,1.0));
-    display:none;
-    opacity:1;
-    z-index:99;
-}
-.gridbox p.gridcaption, .gridcenter p.gridcaption {
-    opacity: 0;
-    background:#fff;
-    color:#000;
-    font-size: 2em;
-    text-transform: uppercase;
-    position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    margin:0;
-    padding:24% 0 0;
-    text-indent:0;
-    text-align:center;
-    cursor:pointer;
-    pointer-events:none;
-}
-.gridcenter p.gridcaption {
-    padding-top:21%;
-    line-height: 1.3;
-}
-.gridbox:hover p.gridcaption {
-    opacity:.60;
 }
 .centerphoto {
     width:100%;
@@ -1034,6 +948,9 @@ canvas#homelessline {
         margin-left:0;
         width:50%;
     }
+    .opener div#title h2 {
+        font-size:10em;
+    }
 }
 @media (max-width:930px) {
     #logoimg {
@@ -1055,7 +972,10 @@ canvas#homelessline {
         margin-left:5%;
         margin-right:5%;
     }
-    p, .reveal-modal li, p.lead {
+    .opener div#title h2 {
+        font-size:8em;
+    }
+    p, .reveal-modal li {
         color:#333;
         font-size:1.1em;
         line-height:1.8;
@@ -1103,6 +1023,10 @@ canvas#homelessline {
     .gridbox p.gridcaption, .gridcenter p.gridcaption {
         font-size:1.4em;
     }
+    .opener div#title h2 {
+        font-size:6em;
+        line-height:.45;
+    }
 }
 @media (max-width:540px) {
     div.title h2 {
@@ -1110,6 +1034,14 @@ canvas#homelessline {
     }
     div.title h1 {
         font-size:2.25em;
+    }
+    .opener div#title h2 {
+        font-size:3.5em;
+        line-height:.35;
+        text-shadow: 0px 0px 2px rgba(0,0,0,.5);
+    }
+    p.blurb {
+        font-size:1.2em;
     }
     .inset-video-right, section.inset .inset-video-right, .gridprofile .inset-video-right {
         padding-left:0;
@@ -1220,8 +1152,11 @@ canvas#homelessline {
         width:90%;
         font-size:1.85em;
     }
-    p, .reveal-modal li, p.lead {
+    p, .reveal-modal li {
         font-size:1em;
+    }
+    p.lead {
+        font-size:1.1em;
     }
     .photogrid li {
         padding:0 .15em .3em;

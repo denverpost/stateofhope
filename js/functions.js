@@ -152,7 +152,7 @@ function getAdSize() {
 function showAd() {
     var adSize = getAdSize();
     if (moreAd && adSize) {
-        $('#adframewrapper').html('<iframe src="' + pathRoot + 'ad.html?' + adSize[0] + '"seamless height="' + adSize[2] + '" width="' + adSize[1] + '" frameborder="0"></iframe>');
+        $('#adframewrapper').html('<iframe src="' + pathRoot + 'ad.html?' + adSize[0] + '" seamless height="' + adSize[2] + '" width="' + adSize[1] + '" frameborder="0"></iframe>');
         $('#adwrapper').fadeIn(400);
         $('a.boxclose').fadeIn(400);
         var adH = $('#adwrapper').height();
@@ -161,16 +161,18 @@ function showAd() {
     }
 }
 
-function getAdTimes() {
+function getAdTimes(numAds) {
+    var adReturns = [];
     var docHeight = $(document).height();
-    var chunkHeight = docHeight / 3;
+    var chunkHeight = docHeight / numAds;
     var innerHeight = (window.innerHeight * 2);
-    var adReturns = [Math.round(innerHeight), Math.round(innerHeight + chunkHeight), Math.round(innerHeight + chunkHeight * 2), Math.round(innerHeight + chunkHeight * 3),  Math.round(innerHeight + chunkHeight * 4)];
+    for (i=1;i<=numAds;i++) {
+        adReturns.push( Math.round( innerHeight + (chunkHeight * i) ) );
+    }
     return adReturns;
-
 }
 
-var adTimes = getAdTimes();
+var adTimes = getAdTimes(0);
 
 $('#timothyphotos').find('img').unveil(300, function() {
     $('#timothyphotos.centergallery').slick({
@@ -220,26 +222,9 @@ $(document).ready(function() {
             showAd();
         }
     }
-    if ( isVisible('#overviewvid') && vidBack ) {
-        darkBackground('#overviewvid',false);
-        vidBack = false;
-    }
-    if ( isVisible('#slidesoffset') && slideBack ) {
-        darkBackground('#slidesoffset',false);
-        slideBack = false;
-    }
-    $('#fade1').animate({opacity:'1'},1200);
-    $('#fade2').delay(500).animate({opacity:'1'},1600);
-    if (!scrollvis && $(window).scrollTop() < 50) {
-        $('#scroll-down').delay(1400).animate({opacity:'1'},1400);
-        scrollvis = true;
-    }
 });
 
 $(window).scroll(function() {
-    if (scrollvis) {
-        $('#scroll-down').animate({opacity:'0'},800);
-    }
     for (var i = 1; i < adTimes.length; i++) {
         if (adTimes[i] > ($(window).scrollTop() - 35) && adTimes[i] < ($(window).scrollTop() + 35)) {
             hideAdManual();
@@ -264,19 +249,5 @@ $(window).scroll(function() {
             rewrite_url($(triggerDiv).data('omniUrl'),$(triggerDiv).data('omniTitle'));
             $(triggerDiv).removeClass('omnitrig');
         }
-    }
-    if ( isVisible('#overviewvid') && vidBack ) {
-        darkBackground('#overviewvid',false);
-        vidBack = false;
-    } else if ( !isVisible('#overviewvid') && !vidBack ) {
-        darkBackground('#overviewvid',true);
-        vidBack = true;
-    }
-    if ( isVisible('#slidesoffset') && slideBack ) {
-        darkBackground('#slidesoffset',false);
-        slideBack = false;
-    } else if ( !isVisible('#slidesoffset') && !slideBack ) {
-        darkBackground('#slidesoffset',true);
-        slideBack = true;
     }
 });
