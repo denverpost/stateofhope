@@ -77,6 +77,9 @@ body {
     margin-top:-45px;
     margin-bottom:1em;
 }
+.opener.lower {
+    margin-bottom:12em;
+}
 .opener {
     background-image:url('http://extras.denverpost.com/homelessstudents/img/part1main.jpg');
 }
@@ -160,19 +163,27 @@ div#name2 h1 {
     font-weight:300;
     color:#fff;
 }
+.lowertitle h3 {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    color:rgba(0,0,0,0.5);
+    transform: scale(1,.7);
+    letter-spacing: 1px;
+}
 p.lead {
     font-size:1.3em;
     line-height:2;
     font-weight:700;
 }
 p.blurb {
-    font-family:'PT Sans Condensed', Helvetica, Arial, sans-serif;
-    font-size:1.25em;
-    line-height:1.4;
-    color:#616161;
+    font-family:'Noticia Text', Georgia, Times, 'Times New Roman', serif;
+    font-size:1.35em;
+    line-height:2;
+    color:rgba(0,0,0,0.5);
     font-style: italic;
     text-align: center;
-    margin:6em auto 10em;
+    margin:8em auto 10em;
     font-weight:400;
 }
 p.byline {
@@ -200,10 +211,61 @@ p.bylinebottom {
     height:0;
     clear:both;
 }
+section.inset a.hideme, section.inset a.expandme {
+    text-transform: uppercase;
+    font-size:.9em;
+    text-decoration: none;
+}
+section.inset a.hideme:after {
+    content: "\25B2";
+    display:inline-block;
+    padding:0 1em;
+}
+section.inset.right a.expandme {
+    text-align:right;
+    float:right;
+}
+section.inset.right a.expandme:before {
+    content: "\25C0";
+    display:inline-block;
+    padding:0 1em;
+}
+section.inset.left a.expandme:after {
+    content:'\25BA';
+    display:inline-block;
+    padding:0 1em;
+}
+.columns section.large-inset,
+.columns section.inset + .columns section.large-inset {
+    margin:2em auto;
+    padding:2em;
+    margin-top:2em!important;
+}
 section.inset {
-    background:#f3f3f3;
+    background:#f8f8f8;
     padding:3em 0 6em;
     margin:6em auto;
+}
+section.inset.right {
+    background:#f8f8f8;
+    padding:0 3em 2em;
+    margin:.5em -15% .5em 1.5em;
+    width: 60%;
+    font-size:.9em;
+    line-height:1.4;
+}
+section.inset.left {
+    background:#f8f8f8;
+    padding:0 3em 2em;
+    margin:.5em 1.5em .5em -15%;
+    width: 60%;
+    font-size:.9em;
+    line-height:1.4;
+}
+section.inset.right h3.subheading,
+section.inset.left h3.subheading {
+    font-size:1.5em;
+    width:90%;
 }
 section.inset + section.inset {
     margin-top:12em;
@@ -369,20 +431,20 @@ div.title h1 {
 }
 div.title.lowertitle h1 {
     font-size:2.75em;
-    margin:20% auto 12%;
-    border-bottom:1px solid #aaa;
-    padding-bottom:8%;
+    margin:1em auto 2em;
+    border-top:1px solid #aaa;
+    padding-top:1em;
     width:80%;
 }
 div.title h2 span.titlepart {
-    color:#990000;
+    color:rgba(0,0,0,0.5);
     font-weight:400;
 }
 div.title h2#fade1 span.titlepart {
     font-weight:700;
 }
 div.title h1 span.titlepart {
-    color:#990000;
+    color:rgba(0,0,0,0.5);
     font-weight:700;
     padding-right:.35em;
 }
@@ -396,9 +458,6 @@ p, .reveal-modal li {
     line-height:2;
     margin-bottom:1.6em;
     list-style:circle inside;
-}
-p {
-    text-align:justify;
 }
 #credits .row {
     margin-top:2em;
@@ -503,7 +562,7 @@ p a, p a:visited {
     text-decoration: underline;
 }
 a:hover, * a:hover, a:hover * {
-    color:#990000;
+    color:rgba(0,0,0,0.5);
 }
 .row.solo {
     margin-bottom:4em;
@@ -561,7 +620,7 @@ a:hover, * a:hover, a:hover * {
     padding-right:.5em;
 }
 .caption span.capwarning {
-    color:#990000;
+    color:rgba(0,0,0,0.5);
     font-weight:700;
 }
 .centergallery {
@@ -825,7 +884,7 @@ div#footer-bar ul.social li {
     color: #fa5051;
 }
 .tabs dd > a:hover {
-    color: #990000;
+    color:rgba(0,0,0,0.5);
 }
 .tabs dd.active a {
     border-top: 3px solid rgba(153,0,0,0.5);
@@ -835,7 +894,7 @@ div#footer-bar ul.social li {
     color:#004646;
 }
 .tabs dd.active a:hover {
-    color: #990000;
+    color:rgba(0,0,0,0.5);
 }
 .foo-source {
     font-family: inherit;

@@ -32,6 +32,12 @@ function scrollDownTo(whereToScroll, scrollOffset) {
     }, 300);
 }
 
+function toggleSidebar(toShow,toHide) {
+    $(toShow).removeClass('hide');
+    $(toHide).addClass('hide');
+    scrollDownTo(toShow);
+}
+
 var playerClear = false;
 
 function playerCreator(embedId, playerId, divId) {
