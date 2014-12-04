@@ -58,17 +58,14 @@ body {
     z-index: -2;
     margin-bottom:1em;
 }
-.opener.lower {
-    margin-bottom:12em;
-}
 #part1intro {
-    background-image:url('../img/preston-1JA3148.jpg');
+    background-image:url('../img/opener-part1.jpg');
 }
 #part2intro {
-    background-image:url('../img/preston-1JA3148.jpg');
+    background-image:url('../img/opener-part2.jpg');
 }
 #part3intro {
-    background-image:url('../img/preston-1JA3148.jpg');
+    background-image:url('../img/opener-part3.jpg');
 }
 .opener div#title {
     position: absolute;
@@ -86,9 +83,11 @@ body {
     font-size:12.5em;
     text-align:center;
     width:100%;
-    line-height:.525;
+    line-height:.55;
     color:#f9f9f9;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing:-2px;
+    word-spacing:12px;
     text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
 }
 #adwrapper a.boxclose:hover {
@@ -118,16 +117,16 @@ div#name1 {
     opacity:1;
 }
 div#name2 {
-    top:.5em;
+    top:.6em;
     left:1.5em;
     position:absolute;
-    height:1.8em;
+    height:1.6em;
     width:18em;
     opacity:0;
 }
 div#name2 h1 {
     font-family:'PT Sans', Helvetica, Arial, sans-serif !important;
-    font-size:1.25em;
+    font-size:1.1em;
     text-transform: uppercase;
     line-height:1.7;
     font-weight:400;
@@ -167,12 +166,12 @@ p.bylinebottom {
     margin-bottom:1em;
 }
 #logoimg {
-    margin:.0;
+    margin:0;
     height:1.6em;
 }
 #logosmall {
-    margin:0 2em 0 0;
-    height:1.8em;
+    margin:0 1.2em 0 0;
+    height:1.6em;
     display:inline-block;
     float:left;
 }
@@ -263,16 +262,16 @@ section.inset p.caption {
 }
 section.inset .inset-video-right {
     float:right;
-    margin-right:-20%;
-    width:60%;
+    margin-right:-10%;
+    width:55%;
     margin-left:2em;
     padding-top:1em;
     padding-bottom:1em;
 }
 section.inset .inset-video-left {
     float:left;
-    margin-left:-20%;
-    width:60%;
+    margin-left:-10%;
+    width:55%;
     margin-right:2em;
     padding-top:1em;
     padding-bottom:1em;
@@ -634,16 +633,16 @@ a:hover, * a:hover, a:hover * {
     float:right;
     margin-top:.5em;
     margin-bottom:.5em;
-    margin-right:-25%;
-    width:75%;
+    margin-right:-15%;
+    width:60%;
     margin-left:1.5em;
 }
 .inset-video-left {
     float:left;
     margin-top:.5em;
     margin-bottom:.5em;
-    margin-left:-25%;
-    width:75%;
+    margin-left:-15%;
+    width:60%;
     margin-right:1.5em;
 }
 .vid-embed-wrap {
@@ -739,6 +738,21 @@ div#footer-bar ul.social li {
     float:left;
     display:inline-block;
 }
+@media (max-width:1550px) {
+    .opener div#title h2 {
+        font-size:12em;
+    }
+}
+@media (max-width:1450px) {
+    .opener div#title h2 {
+        font-size:11em;
+    }
+}
+@media (max-width:1340px) {
+    .opener div#title h2 {
+        font-size:10em;
+    }
+}
 @media (max-width:1240px) {
     .inset-video-right, section.inset .inset-video-right {
         margin-right:0;
@@ -750,6 +764,22 @@ div#footer-bar ul.social li {
     }
     .opener div#title h2 {
         font-size:10em;
+    }
+}
+@media (max-width:1200px) {
+    .opener div#title h2 {
+        font-size:9em;
+    }
+}
+@media (max-width:1100px) {
+    .opener div#title h2 {
+        font-size:8em;
+        line-height:.5;
+    }
+}
+@media (max-width:980px) {
+    .opener div#title h2 {
+        font-size:7em;
     }
 }
 @media (max-width:930px) {
@@ -772,9 +802,6 @@ div#footer-bar ul.social li {
         margin-left:5%;
         margin-right:5%;
     }
-    .opener div#title h2 {
-        font-size:8em;
-    }
     p, .reveal-modal li {
         color:#333;
         font-size:1.1em;
@@ -793,6 +820,13 @@ div#footer-bar ul.social li {
         top:.2em;
         right:.2em;
         line-height:1;
+    }
+}
+@media (max-width:850px) {
+    .opener div#title h2 {
+        font-size:6em;
+        line-height:.45;
+        letter-spacing:-1px;
     }
 }
 @media (max-width:800px) {
@@ -821,6 +855,20 @@ div#footer-bar ul.social li {
         width:8%;
     }
 }
+@media (max-width:740px) {
+    .opener div#title h2 {
+        font-size:5em;
+        line-height:.4;
+        word-spacing:5px;
+    }
+}
+@media (max-width:600px) {
+    .opener div#title h2 {
+        font-size:4em;
+        line-height:.35;
+        text-shadow: 0px 0px 2px rgba(0,0,0,.5);
+    }
+}
 @media (max-width:540px) {
     div.title h2 {
         font-size:3.5em;
@@ -830,8 +878,6 @@ div#footer-bar ul.social li {
     }
     .opener div#title h2 {
         font-size:3.5em;
-        line-height:.35;
-        text-shadow: 0px 0px 2px rgba(0,0,0,.5);
     }
     p.blurb {
         font-size:1.2em;
@@ -915,12 +961,24 @@ div#footer-bar ul.social li {
         line-height:1.5;
     }
 }
+@media (max-width:420px) {
+    .opener div#title h2 {
+        font-size:2.7em;
+        line-height:.3;
+        letter-spacing:0px;
+    }
+}
 @media (max-width:360px) {
     div.title h2 {
         font-size:2.75em;
     }
     div.title h1 {
         font-size:2em;
+    }
+    .opener div#title h2 {
+        font-size:2.45em;
+        line-height:.25;
+        letter-spacing:0px;
     }
     div.title h1 span.titlepart {
         display: block;
@@ -933,7 +991,8 @@ div#footer-bar ul.social li {
         font-size:1em;
     }
     p.lead {
-        font-size:1.1em;
+        font-size:1.05em;
+        line-height:1.8;
     }
     section.inset p {
         font-size: 1.05em;
