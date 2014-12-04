@@ -6,7 +6,6 @@ body {
 }
 .fixed {
     z-index:599999;
-    top:-45px;
 }
 .forhelp {
     border:1px solid #ddd;
@@ -74,14 +73,19 @@ body {
     position: relative;
     padding: 0;
     z-index: -2;
-    margin-top:-45px;
     margin-bottom:1em;
 }
 .opener.lower {
     margin-bottom:12em;
 }
-.opener {
-    background-image:url('http://extras.denverpost.com/homelessstudents/img/part1main.jpg');
+#part1intro {
+    background-image:url('../img/preston-1JA3148.jpg');
+}
+#part2intro {
+    background-image:url('../img/preston-1JA3148.jpg');
+}
+#part3intro {
+    background-image:url('../img/preston-1JA3148.jpg');
 }
 .opener div#title {
     position: absolute;
@@ -148,6 +152,7 @@ div#name1 {
     height:1.7em;
     width:18em;
     padding:.1em;
+    opacity:1;
 }
 div#name2 {
     top:.5em;
@@ -155,13 +160,13 @@ div#name2 {
     position:absolute;
     height:1.8em;
     width:18em;
-    display:none;
+    opacity:0;
 }
 div#name2 h1 {
     font-size:1.8em;
     line-height:1;
     font-weight:300;
-    color:#fff;
+    color:#555;
 }
 .lowertitle h3 {
     width: 100%;
@@ -183,13 +188,13 @@ p.blurb {
     color:rgba(0,0,0,0.5);
     font-style: italic;
     text-align: center;
-    margin:8em auto 10em;
+    margin:4em auto;
     font-weight:400;
 }
 p.byline {
     text-align:center;
     font-size:1em;
-    margin-bottom:4em;
+    margin-bottom:5em;
 }
 p.bylinebottom {
     text-align:center;
@@ -279,6 +284,7 @@ section.inset div.title.lowertitle h1 {
 section.inset h3.subheading {
     margin-top:2em;
     font-size:2.05em;
+    width:90%;
 }
 section.inset p, .reverse li {
     font-family: 'PT Sans', Helvetica, Arial, sans-serif;
@@ -293,7 +299,7 @@ section.inset p.caption {
 section.inset .inset-video-right {
     float:right;
     margin-right:-20%;
-    width:70%;
+    width:60%;
     margin-left:2em;
     padding-top:1em;
     padding-bottom:1em;
@@ -301,7 +307,7 @@ section.inset .inset-video-right {
 section.inset .inset-video-left {
     float:left;
     margin-left:-20%;
-    width:70%;
+    width:60%;
     margin-right:2em;
     padding-top:1em;
     padding-bottom:1em;
@@ -386,8 +392,24 @@ section.inset .inset-video-left {
     font-family:'PT Sans', Helvetica, Arial, sans-serif !important;
     color:#222;
 }
+.tooltip {
+    color:#333;
+    background:#f9f9f9;
+    -webkit-box-shadow:1px 1px 3px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow:1px 1px 3px rgba(0, 0, 0, 0.25);
+    box-shadow:1px 1px 3px rgba(0, 0, 0, 0.25);
+    font-size:.9em;
+    line-height:1.5;
+    font-family:'PT Sans', Helvetica, Arial, sans-serif !important;
+}
+.tooltip.tip-top>.nub {
+    display:none;
+}
 .has-tip {
-    font-weight:normal;
+    font-weight:400;
+}
+p.lead .has-tip {
+    font-weight: 700;
 }
 .has-tip:hover {
     color:#009696;
@@ -1115,6 +1137,16 @@ canvas#homelessline {
         margin-right:0;
         margin-left:0;
         width:100%;
+    }
+    section.inset.right {
+        padding:0 0 1em;
+        margin:.5em 0 .5em;
+        width: 100%;
+    }
+    section.inset.left {
+        padding:0 0 1em;
+        margin:.5em 0 .5em;
+        width: 100%;
     }
     h3.subheading {
         font-size:1.5em;
