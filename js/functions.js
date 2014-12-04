@@ -182,6 +182,24 @@ $('#charlotteswebphotos').find('img').unveil(300, function() {
         }]
     });
 });
+$('#prestonphotos').find('img').unveil(300, function() {
+    $('#prestonphotos.centergallery').slick({
+        centerMode: true,
+        centerPadding: '15%',
+        slidesToShow: 1,
+        prevArrow: '<button type="button" class="slick-prev"><span>&lt;</span></button>',
+        nextArrow: '<button type="button" class="slick-next"><span>&gt;</span></button>',
+        responsive: [{
+            breakpoint: 800,
+            settings: {
+                arrows: true,
+                centerMode: true,
+                centerPadding: '8%',
+                slidesToShow: 1
+            }
+        }]
+    });
+});
 $('#otherfamilies').find('img').unveil(300, function() {
     $('#otherfamilies.centergallery').slick({
         centerMode: true,
@@ -204,7 +222,6 @@ $('#otherfamilies').find('img').unveil(300, function() {
 $(document).ready(function() {
     checkHash();
     if ( !isElementInViewport('part1intro') && titleFade ) {
-        console.log('here');
         fadeNavBar(false);
     }
     if ( $(window).scrollTop() > adTimes[0] ) {

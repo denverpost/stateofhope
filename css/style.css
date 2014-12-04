@@ -276,6 +276,17 @@ section.inset .inset-video-left {
     padding-top:1em;
     padding-bottom:1em;
 }
+section.inset.left.chart,
+section.inset.right.chart {
+    background:#fff;
+    font-size:.85em;
+    line-height:1.2;
+    padding:0 1.5em 1em;
+}
+section.inset.left.chart h3.subheading,
+section.inset.right.chart h3.subheading {
+    margin-top:1em;
+}
 .top-bar,
 .top-bar-section ul,
 .top-bar-section ul li,
