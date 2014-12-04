@@ -1,16 +1,14 @@
-About mental-illness
+About stateofhope
 ======
-The Denver Post's third foray into truly mobile-first, responsive, interactive storytelling on the web. 
-
-This project seeks to shed light on issues facing those afflicted by mental illnesses.
+The Denver Post's interactive, respsonive template for the State of Hope CBD-oil investigation released Dec. 7, 2014. 
 
 Utilizes HTML5 video, D3/SVG and JavaScript to create immersion and HTML5/CSS3 for responsive design.
 
-Story by 
-Photos by 
-Video by 
+Story by John Ingold
+Photos by Joe Amon
+Video by Lindsay Pierce
 Data by 
-Design by Daniel J. Schneider and Jeff Neumann, The Denver Post
+Design by Daniel J. Schneider, The Denver Post
 
 List of codebase resources
 -----
