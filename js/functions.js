@@ -29,6 +29,7 @@ function revealCredits() {
 function checkHash() {
     if (window.location.hash) {
        var hash = window.location.hash;
+       hash = (hash == '#charlotteswebvideo') ? '#charlottesweb' : hash;
        if ($(hash).hasClass('hide')) {
             toggleSidebar(hash,hash + 'link');
        } else {
