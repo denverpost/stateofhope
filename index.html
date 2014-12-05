@@ -87,6 +87,7 @@
 				<li class="top-top"><a href="javascript:scrollDownTo('#part1',60);">1</a></li>
 				<li class="top-top"><a href="javascript:scrollDownTo('#part2',60);">2</a></li>
 				<li class="top-top"><a href="javascript:scrollDownTo('#part3',60);">3</a></li>
+				<li class="top-top"><a href="javascript:scrollDownTo('#video',0);">Video</a></li>
 				<li class="divider wide"></li>
 				<li class="top-top"><a href="javascript:void(0);" data-reveal-id="credits">Credits</a></li>
 				<li class="divider"></li>
@@ -111,7 +112,7 @@
 <![endif]-->
 
 
-<div class="opener columns" id="part1intro">
+<div class="opener columns" id="part1intro" data-omni-url="#part1" data-omni-title="Part 1: State of Hope">
 	<div id="title">
 		<h2 class="heading">Desperate Journey</h2>
 	</div>
@@ -119,7 +120,7 @@
 
 <div class="row">
 	<div class="large-9 large-centered medium-11 medium-centered small-12 columns">
-		<p class="byline">Stories by John Ingold &bull; Photos by Joe Amon &bull; Videos by Lindsay Pierce</p>
+		<p class="byline">Reporting by John Ingold &bull; Photography by Joe Amon &bull; Videography by Lindsay Pierce</p>
 	</div>
 </div>
 
@@ -148,7 +149,7 @@
 			<div class="large-12 large-centered medium-12 medium-centered small-12 columns">
 				<div class="centerphoto">
 					<img src="./img/preston-1JA1648a.jpg" alt="Ana Watson measures Preston&rsquo;s first dose" />
-					<p class="caption"><span class="captionhed">July 12 </span>Ana Watson measures 5mg per pound for Preston&rsquo;s first dose of &ldquo;Haleigh&rsquo;s Hope,&rdquo; a high-CBD oil she has been pinning her hopes on to help control his seizures and change his life.</p>
+					<p class="caption"><span class="captionhed">July 12 </span>Ana Watson measures 0.5mg per pound of body weight for Preston&rsquo;s first dose of &ldquo;Haleigh&rsquo;s Hope,&rdquo; a high-CBD oil she has been pinning her hopes on to help control his seizures and change his life.</p>
 				</div>
 			</div>
 		</div>
@@ -177,10 +178,6 @@
 		<p>&ldquo;He needs to learn to take it!&rdquo; Ana says.</p>
 		<p>Milly walks out of the room, saying they should try later.</p>
 		<p>&ldquo;Stop arguing with me!&rdquo; Ana finally says. &ldquo;Damn.&rdquo;</p>
-		<div class="large-6 medium-6 small-12 columns inset-video-right">
-			<img src="./img/preston-2JA3316.jpg" alt="Preston watches as Ana and her mother argue" />
-			<p class="caption"><span class="captionhed">July 12 </span>Preston watches as Ana and her mother, Milly, argue over how to administer the CBD oil after Preston spit out their first attempt at giving it to him orally. Milly will not let the argument end, and in the tension of the moment Ana asks, &ldquo;Why did we even come down here? He needs to take it.&rdquo;</p>
-		</div>
 		<p>She turns toward Preston, and, as if he senses the tension, the cringe on his face pivots into an awkward smile. He starts to laugh, and she does, too.</p>
 		<p>&ldquo;Silly mommy,&rdquo; he says quietly.</p>
 		<p>Ana eventually calls a friend, who suggests giving the medicine in emptied pill capsules delivered as a suppository. She grimaces. But she has already been at it for an hour. The odds that seizures will kill Preston increase every year; the damage in his brain may soon be permanent. She is compelled to try.</p>
@@ -191,7 +188,30 @@
 		<p>His cries fade to whimpers. His eyelids twitch with another seizure. Ana sits on the toilet, holding him on her lap as he quivers in her arms.</p>
 		<p>&ldquo;It&rsquo;s OK,&rdquo; she whispers. &ldquo;It&rsquo;s OK, Boo-Boo.&rdquo;</p>
 		<p>Seven months and 1,600 miles after their journey began, Ana has finally given Preston his first dose of marijuana.</p>
+	</div>
+</div>
 
+<div class="row solo" id="video">
+	<div class="large-12 large-centered medium-12 medium-centered small-12 columns">
+		<h3 class="subheading">The only hope left</h3>
+		<div class="large-12 large-centered medium-12 medium-centered small-12 columns centervideo">
+			<div class="vid-embed-wrap">
+				<div class="vid-height-space"></div>
+				<div class="vid-embed" id="video1" onclick="playerCreator('video1', 'NlM3d3cTognXIao7-hQCvWj7bdsKxnj7');" style="background-image:url('img/video-preston.jpg');"> <!-- Doc (main) -->
+					<div class="vid-embed-play">
+						<div class="playicon"></div>
+						<div class="playtext"></div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<p class="caption">Ana Watson and her family moved from North Carolina to Colorado with the dream that medical marijuana would help her son, Preston, and stop his relentless seizures. Their journey was harder than they expected. The answers were more elusive than the happy anecdotes seemed to promise. But they kept pressing forward because they said they had no other choice. Because Colorado was the only hope they had left.</p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="large-9 large-centered medium-11 medium-centered small-12 columns">
 		<h3 class="subheading">Exodus</h3>
 
 		<p class="lead"><span data-tooltip aria-haspopup="true" class="has-tip tip-top radius" title="Marijuana grown and sold in Colorado under special regulations and intended for people suffering specified debilitating medical conditions. Colorado voters legalized medical marijuana in 2000 with the passage of Amendment 20.">Medical marijuana</span> has made Colorado a promised land for desperate parents trying to save their children.</p>
@@ -371,13 +391,13 @@
 
 <div class="row">
 	<div class="large-9 large-centered medium-11 medium-centered small-12 columns">
-		<p>There are the grand mals, full of violent convulsing that can last minutes, which Preston falls into about once a week. But much more common are the little eye flutters. In medical terms, they are called <span data-tooltip aria-haspopup="true" class="has-tip tip-top radius" title="A brief seizure characterized by little muscle jerks. Preston&rsquo;s eyelid flutters are a myoclonic seizure. Ana calls them blinkies.">myoclonic seizures</span>. Ana calls them &ldquo;blinkies.&rdquo; They look as though Preston is on the verge of sneezing.</p>
+		<p>There are the grand mals, full of violent convulsing that can last minutes, which Preston falls into about once a week. But much more common are the little eye flutters. In medical terms, they are called <span data-tooltip aria-haspopup="true" class="has-tip tip-top radius" title="A brief seizure characterized by little muscle jerks. Preston&rsquo;s eyelid flutters are a myoclonic seizure. Ana calls them blinkies.">myoclonic seizures</span>. <a href="javascript:void(0);" class="startVideo" id="hilite1" onclick="playerScroller('video4', 'RtNXd3cTridnrrRkXMlvQzVo8XHYAbTx', this);">Ana calls them &ldquo;blinkies.&rdquo;</a> They look as though Preston is on the verge of sneezing.</p>
 		<p>He can have hundreds of <span data-tooltip aria-haspopup="true" class="has-tip tip-top radius" title="What Ana calls Preston&rsquo;s eyelid-flutter seizures, his most frequent seizure type. Preston can have hundreds of them a day. Clinically, they are known as myoclonic seizures.">blinkies</span> a day. And, though they usually pass gently, each one is like an eraser across his brain&rsquo;s chalkboard. Over and over, new development is wiped clean by the seizures. So, over and over, he learns the same things.</p>
 		<p>At 12 years old, Preston cannot spell his name. He cannot reliably count to 10. He is still learning his colors. He doesn&rsquo;t know his mom&rsquo;s name or where he lives or how to call home if he gets lost. He wobbles when he walks and falls over easily.</p>
 		<div class="large-6 columns inset-video-right">
 			<div class="vid-embed-wrap">
 				<div class="vid-height-space"></div>
-				<div class="vid-embed" id="video4" onclick="playerCreator('video4', 'RtNXd3cTridnrrRkXMlvQzVo8XHYAbTx');" style="background-image:url('img/video-blinkies.jpg');">
+				<div class="vid-embed" id="video4" onclick="playerCreator('video4', 'RtNXd3cTridnrrRkXMlvQzVo8XHYAbTx', '#hilite1');" style="background-image:url('img/video-blinkies.jpg');">
 					<div class="vid-embed-play">
 						<div class="playicon"></div>
 						<div class="playtext"></div>
@@ -478,23 +498,6 @@
 </div>
 
 </section>
-
-<div class="row">
-		<div class="large-12 large-centered medium-12 medium-centered small-12 columns centervideo">
-			<div class="vid-embed-wrap">
-				<div class="vid-height-space"></div>
-				<div class="vid-embed" id="video1" onclick="playerCreator('video1', 'NlM3d3cTognXIao7-hQCvWj7bdsKxnj7');" style="background-image:url('img/video-preston.jpg');"> <!-- Doc (main) -->
-					<div class="vid-embed-play">
-						<div class="playicon"></div>
-						<div class="playtext"></div>
-					</div>
-				</div>
-				<div class="clear"></div>
-			</div>
-		</div>
-
-
-</div>
 
 <div class="opener lower columns" id="part2intro">
 	<div id="title">
@@ -715,6 +718,10 @@
 	<div class="large-10 columns">
 		<img src="./img/loading.gif" data-src="./img/preston-2JA3767.jpg" alt="Tami King and Ana Watson recheck dosing measurements" />
 		<p class="caption"><span class="captionhed">July 13 </span>Tami King and Ana Watson recheck dosing measurements for the CBD oil for Preston&rsquo;s medication on the high-CBD oil to try and control his seizures.</p>
+	</div>
+	<div class="large-10 columns">
+		<img src="./img/loading.gif" data-src="./img/preston-2JA3316.jpg" alt="Preston watches as Ana and her mother argue" />
+		<p class="caption"><span class="captionhed">July 12 </span>Preston watches as Ana and her mother, Milly, argue over how to administer the CBD oil after Preston spit out their first attempt at giving it to him orally. Milly will not let the argument end, and in the tension of the moment Ana asks, &ldquo;Why did we even come down here? He needs to take it.&rdquo;</p>
 	</div>
 	<div class="large-10 columns">
 		<img src="./img/loading.gif" data-src="./img/preston-1JA5752.jpg" alt="&ldquo;Oma&rdquo; &mdash; Preston&rsquo;s grandmother Milly Raynor" />

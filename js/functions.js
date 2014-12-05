@@ -5,7 +5,7 @@ $(document).foundation('reveal', {
 
 var pathRoot = window.location.protocol + '//' + window.location.hostname + window.location.pathname;
 var titleRoot = document.title;
-var current = '#part1';
+var current = '';
 
 function load_omniture() {
         var omni = $('#omniture').html();
@@ -16,7 +16,7 @@ function build_url(path) {
         return url;
 }
 function rewrite_url(path, new_title) {
-        var url = build_url(path);
+        var url = (typeof(path) != 'undefined' ) ? build_url(path) : '';
         current = path;
         document.title = new_title + ' - ' + titleRoot;
         window.history.replaceState('', new_title, url);
@@ -51,7 +51,7 @@ function toggleSidebar(toShow,toHide) {
 function playerCreator(embedId, playerId, divId) {
     divId = typeof divId !== 'undefined' ? divId : false;
     if (divId) {
-        $(divId).animate({backgroundColor:'rgba(153,0,0,0.3)',paddingLeft:'.5em',paddingRight:'.5em'}, 350).delay(2000).animate({backgroundColor:'transparent',paddingLeft:'0',paddingRight:'0'},1000);
+        $(divId).animate({backgroundColor:'rgba(0,70,70,0.3)',paddingLeft:'.5em',paddingRight:'.5em'}, 350).delay(2000).animate({backgroundColor:'transparent',paddingLeft:'0',paddingRight:'0'},1000);
     }
     OO.Player.create(embedId, playerId, {'autoplay':true});
 }
@@ -247,6 +247,10 @@ $(window).scroll(function() {
         fadeNavBar(false);
     } else if (isElementInViewport('part1intro') && !titleFade) {
         fadeNavBar(true);
+        if ( current != '' ) {
+            var triggerDiv = $('part1intro');
+            rewrite_url($(triggerDiv).data('omniUrl'),$(triggerDiv).data('omniTitle'));
+        }
     }
     if (isElementInViewport('part1') && current != '#part1') {
         var triggerDiv = $('#part1');
