@@ -31,6 +31,8 @@ function checkHash() {
        var hash = window.location.hash;
        if ($(hash).hasClass('hide')) {
             toggleSidebar(hash,hash + 'link');
+       } else {
+            scrollDownTo(hash);
        }
     }
 }
