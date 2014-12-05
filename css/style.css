@@ -148,11 +148,11 @@ p.lead {
 p.blurb {
     font-family:'Noticia Text', Georgia, Times, 'Times New Roman', serif;
     font-size:1.35em;
-    line-height:2;
+    line-height:1.9;
     color:rgba(0,0,0,0.5);
     font-style: italic;
     text-align: center;
-    margin:4em auto;
+    margin:1em auto 5em;
     font-weight:400;
 }
 p.byline {
@@ -411,6 +411,9 @@ p.lead .has-tip {
     padding-left:.1em;
     font-weight:bold;
     color:#009696;
+}
+div.title.lowertitle {
+    margin-top: 4em;
 }
 div.title h2 {
     margin:25% 0 4%;
@@ -926,7 +929,12 @@ div#footer-bar ul.social li {
         font-size:3.5em;
     }
     p.blurb {
-        font-size:1.2em;
+        font-size:1.1em;
+        line-height:1.7;
+        margin-bottom:2em;
+    }
+    div.title.lowertitle {
+        margin-top: 2em;
     }
     .inset-video-right, section.inset .inset-video-right {
         padding-left:0;
