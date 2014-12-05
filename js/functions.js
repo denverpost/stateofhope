@@ -162,7 +162,7 @@ function getAdTimes(numAds) {
     return adReturns;
 }
 
-var adTimes = getAdTimes(0);
+var adTimes = getAdTimes(3);
 
 $('.chart-late').find('img').unveil(300);
 
