@@ -254,7 +254,7 @@ $(window).scroll(function() {
         var triggerDiv = $('#part1intro');
         rewrite_url($(triggerDiv).data('omniUrl'),$(triggerDiv).data('omniTitle'));
     }
-    if (isElementInViewport('part1') && current != '#part1') {
+    if (isElementInViewport('part1') && !isElementInViewport('part1intro') & !isElementInViewport('part2') && current != '#part1') {
         var triggerDiv = $('#part1');
         rewrite_url($(triggerDiv).data('omniUrl'),$(triggerDiv).data('omniTitle'));
         if ($(triggerDiv).hasClass('omnitrig')) {
@@ -262,7 +262,7 @@ $(window).scroll(function() {
             $(triggerDiv).removeClass('omnitrig');
         }
     }
-    if (isElementInViewport('part2') && current != '#part2') {
+    if (isElementInViewport('part2') && !isElementInViewport('part1') && !isElementInViewport('part3') && current != '#part2') {
         var triggerDiv = $('#part2');
         rewrite_url($(triggerDiv).data('omniUrl'),$(triggerDiv).data('omniTitle'));
         if ($(triggerDiv).hasClass('omnitrig')) {
@@ -270,7 +270,7 @@ $(window).scroll(function() {
             $(triggerDiv).removeClass('omnitrig');
         }
     }
-    if (isElementInViewport('part3') && current != '#part3') {
+    if (isElementInViewport('part3') && !isElementInViewport('part2') && current != '#part3') {
         var triggerDiv = $('#part3');
         rewrite_url($(triggerDiv).data('omniUrl'),$(triggerDiv).data('omniTitle'));
         if ($(triggerDiv).hasClass('omnitrig')) {
