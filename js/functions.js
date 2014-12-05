@@ -16,9 +16,9 @@ function build_url(path) {
         return url;
 }
 function rewrite_url(path, new_title) {
-        var url = (typeof(path) != 'undefined' ) ? build_url(path) : '';
+        var url = build_url(path);
         current = path;
-        document.title = new_title + ' - ' + titleRoot;
+        document.title = (new_title === 'root' ) ? titleRoot : new_title + ' - ' + titleRoot;
         window.history.replaceState('', new_title, url);
 }
 
@@ -164,6 +164,8 @@ function getAdTimes(numAds) {
 
 var adTimes = getAdTimes(0);
 
+$('.chart-late').find('img').unveil(300);
+
 $('#charlotteswebphotos').find('img').unveil(300, function() {
     $('#charlotteswebphotos.centergallery').slick({
         centerMode: true,
@@ -247,14 +249,18 @@ $(window).scroll(function() {
         fadeNavBar(false);
     } else if (isElementInViewport('part1intro') && !titleFade) {
         fadeNavBar(true);
-        if ( current != '' ) {
-            var triggerDiv = $('part1intro');
-            rewrite_url($(triggerDiv).data('omniUrl'),$(triggerDiv).data('omniTitle'));
-        }
+    }
+    if (isElementInViewport('part1intro') && current != '') {
+        var triggerDiv = $('#part1intro');
+        rewrite_url($(triggerDiv).data('omniUrl'),$(triggerDiv).data('omniTitle'));
     }
     if (isElementInViewport('part1') && current != '#part1') {
         var triggerDiv = $('#part1');
         rewrite_url($(triggerDiv).data('omniUrl'),$(triggerDiv).data('omniTitle'));
+        if ($(triggerDiv).hasClass('omnitrig')) {
+            load_omniture();
+            $(triggerDiv).removeClass('omnitrig');
+        }
     }
     if (isElementInViewport('part2') && current != '#part2') {
         var triggerDiv = $('#part2');
