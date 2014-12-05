@@ -259,6 +259,7 @@ section.inset .twinphoto {
 }
 section.inset p.caption {
     font-size:1.05em;
+    line-height:1.85;
 }
 section.inset .inset-video-right {
     float:right;
@@ -551,6 +552,9 @@ a:hover, * a:hover, a:hover * {
 }
 .row.solo {
     margin-bottom:4em;
+}
+.row.solo.chart-late {
+    margin-bottom:2em;
 }
 .photorow {
     margin:2em 0 4em;
