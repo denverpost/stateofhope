@@ -618,7 +618,7 @@ a:hover, * a:hover, a:hover * {
     padding:0 1.5em;
 }
 .centergallery img {
-    margin-bottom:.5em;
+    margin:0 auto .5em;
 }
 .centergallery button span {
     font-family:Times, Georgia, serif !important;
