@@ -195,7 +195,7 @@ $('#prestonphotos').find('img').unveil(300, function() {
         prevArrow: '<button type="button" class="slick-prev"><span>&lt;</span></button>',
         nextArrow: '<button type="button" class="slick-next"><span>&gt;</span></button>',
         responsive: [{
-            breakpoint: 800,
+            breakpoint: 801,
             settings: {
                 arrows: true,
                 centerMode: true,
@@ -213,7 +213,7 @@ $('#otherfamilies').find('img').unveil(300, function() {
         prevArrow: '<button type="button" class="slick-prev"><span>&lt;</span></button>',
         nextArrow: '<button type="button" class="slick-next"><span>&gt;</span></button>',
         responsive: [{
-            breakpoint: 800,
+            breakpoint: 801,
             settings: {
                 arrows: true,
                 centerMode: true,
