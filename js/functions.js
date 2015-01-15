@@ -3,7 +3,8 @@ $(document).foundation('reveal', {
     animationspeed: 200
 });
 
-var pathRoot = window.location.protocol + '//' + window.location.hostname + window.location.pathname;
+var dirPath = window.location.protocol + '//' + window.location.hostname + window.location.pathname;
+var pathRoot = dirPath.substring(0, dirPath.lastIndexOf('/')) + '/';
 var titleRoot = document.title;
 var current = '';
 
